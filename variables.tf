@@ -13,7 +13,7 @@ variable "ami_id" {
 variable "instance_type" {
   description = "EC2 instance type"
   type        = string
-  default     = "t2.micro"
+  # default     = "t2.micro"
   validation {
     condition     = contains(keys({ "Small" = "t2.micro", "Medium" = "t3.medium", "Large" = "m5.large" }), var.instance_type)
     error_message = "Must be one of: Small, Medium, or Large."
